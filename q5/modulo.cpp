@@ -27,8 +27,5 @@ int getInput()
 
 bool isEven(int x)
 {
-    if(x % 2 > 0)
-        return false;
-    else
-        return true;
+    return x % 2 == 0;
 }
