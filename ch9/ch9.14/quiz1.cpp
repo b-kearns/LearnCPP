@@ -29,7 +29,7 @@ void printNames(std::string* names, std::size_t length)
 
     for(std::size_t itr{0}; itr < length; ++itr)
     {
-        std::cout << "Name #" << itr + 1 << names[itr] << std::endl;
+        std::cout << "Name #" << itr + 1 << " " << names[itr] << std::endl;
     }
 }
 
@@ -40,7 +40,11 @@ int main()
 
     getNames(names, length);
 
-    std::sort(names->begin(), names->end());
+    std::sort(names, names + length);
 
-    printNames(names);
+    printNames(names, length);
+
+    delete[] names;
+
+    return 0;
 }
